@@ -5,7 +5,7 @@ title: python
 
 [toc]
 
-
+[返回主目录](../../Readme.md)
 
 
 
@@ -638,3 +638,18 @@ def show_memory(unit='KB', threshold=1):
             print(i, memory)
 ```
 
+
+
+
+
+## 梯度爆炸
+
+梯度和loss都会变为nan。一般情况下，梯度变为nan都是出现了 $$log(0), \frac{x}{0}$$ ![[公式]](https://www.zhihu.com/equation?tex=%5Clog%280%29) , ![[公式]](https://www.zhihu.com/equation?tex=%5Cfrac%7Bx%7D%7B0%7D) 等情况，导致结果变为+inf，也就成了nan。
+
+可能原因：
+
+- 学习率过大；
+- `loss`过小（或者说除以了0 / 计算了 `log(0)`）；
+- 存在脏数据输入`NaN`。可以用numpy.isnan或者tensor.isnan().sum()检查
+
+- target 存在 inf
