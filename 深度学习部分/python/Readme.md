@@ -376,6 +376,7 @@ csc_matrix: 压缩稀疏列矩阵(Compressed sparse column matrix)
 ### csr
 
 csr_matrix: 压缩稀疏行矩阵(Compressed sparse row matrix)
+
 优点：
 
     高效的矩阵加法与乘法内积运算
